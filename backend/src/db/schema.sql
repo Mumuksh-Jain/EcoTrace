@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS transfers (
     transferred_at  TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
--- Downstream demand: recycler posts material requirements
+-- Downstream demand: recycler posts material requirements (schema defined; deferred to post-MVP)
 CREATE TABLE IF NOT EXISTS demands (
     id              SERIAL PRIMARY KEY,
     recycler_id     TEXT NOT NULL REFERENCES entities(id),
