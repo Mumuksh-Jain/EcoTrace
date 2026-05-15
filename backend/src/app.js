@@ -15,10 +15,11 @@ app.get('/health', (_req, res) => {
   res.json({ status: 'ok', service: 'ecotrace-backend', timestamp: new Date().toISOString() });
 });
 
-// Route placeholders (populated Day 2+)
+// Routes
+app.use('/api/entities',  require('./routes/entities'));
 app.use('/api/batches',   require('./routes/batches'));
 app.use('/api/transfers', require('./routes/transfers'));
-app.use('/api/lineage',   require('./routes/lineage'));
+app.use('/api/lineage',   require('./routes/lineage'));   // recursive query — Day 4
 
 // 404 fallthrough
 app.use((_req, res) => {
