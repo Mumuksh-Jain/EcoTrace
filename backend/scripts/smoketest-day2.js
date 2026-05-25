@@ -1,4 +1,4 @@
-'use strict';
+d'use strict';
 
 require('dotenv').config();
 const pool = require('../src/db/pool');
